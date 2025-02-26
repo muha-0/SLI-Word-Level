@@ -9,7 +9,7 @@ You can load the model and run the main file directly. You can modify the main f
 
 
 # Team Members:
-Nour Hany
-Laila Khaled
-Yasmine Mohamed
-Ahmed Sameh
+Nour Hany \n
+Laila Khaled \n
+Yasmine Mohamed \n
+Ahmed Sameh 
