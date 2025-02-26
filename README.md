@@ -3,6 +3,8 @@ SLI (Sign Language Interpreter) is a deep learning-based system for real-time si
 
 Here is a video to illustrate how it works: https://drive.google.com/file/d/1Y_bmxzzyLHVoqKNX6o3S4n5tK4ZCYBr2/view?usp=sharing
 
+Link of the dataset used: https://www.kaggle.com/datasets/risangbaskoro/wlasl-processed
+
 You can check the report for all the details
 
 # How to run:
