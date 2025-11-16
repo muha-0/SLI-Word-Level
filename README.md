@@ -1,24 +1,111 @@
-# SLI-Word-Level
+# SLI‑Word‑Level
+
 SLI (Sign Language Interpreter) is a deep learning-based system for real-time sign language translation at the word level. The project leverages MediaPipe for pose and hand landmark extraction and explores multiple deep learning architectures, including transformers and LSTMs with attention mechanisms. Trying different approaches, we achieved a model with 90% test accuracy.
 
-Here is a video to illustrate how it works: https://drive.google.com/file/d/1Y_bmxzzyLHVoqKNX6o3S4n5tK4ZCYBr2/view?usp=sharing
+---
 
-Link of the dataset used: https://www.kaggle.com/datasets/risangbaskoro/wlasl-processed
+## Demo Video
+A short demo showing the system in action:  
+https://drive.google.com/file/d/1Y_bmxzzyLHVoqKNX6o354n5tK4ZCYBr2/view?usp=sharing
 
-You can check the report for all the details
+---
 
-# Important:
-The code for building the model is not included but you can find everything needed and all the architectures used in the report
+## Dataset  
+Base dataset (WLASL) used for pretraining:  
+https://www.kaggle.com/datasets/risangbaskoro/wlasl-processed
 
-# How to run:
-You can load the model and run the main file directly. You can modify the main file as you want. Just use the sliding window technique mentioned in the report and you will be fine!
+Due to the absence of a public Egyptian Sign Language (ESL) dataset, we would appreciate any contribution  
+If you would like to **contribute ESL recordings**, contact:  
+**esl.dataset@gmail.com**
 
+---
 
-# Team Members:
-Nour Hany
+## Full Research Paper
+The complete updated research paper is available in:  
+`docs/ResearchPaper.pdf`
 
-Laila Khaled
+---
 
-Yasmine Mohamed
+## Important
+This repository provides:
 
-Ahmed Sameh 
+- The **real‑time inference system**
+- Feature extraction utilities using **MediaPipe**
+- Optional grammar correction using **Sapling API**
+- The complete **research paper**
+
+Training scripts are **not included**, but all model architectures and hyperparameters are fully detailed in the paper.
+
+---
+
+## How to Run
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/muha-0/SLI-Word-Level.git
+cd SLI-Word-Level
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Add the Trained Model
+Place the trained model at:
+
+```
+models/SLI_V2.keras
+```
+
+Or specify a custom path using:
+
+```bash
+export SLI_MODEL_PATH="/path/to/model.keras"
+```
+
+### 4. (Optional) Enable Grammar Correction
+```bash
+export SAPLING_API_KEY="your_key_here"
+```
+
+### 5. Run the Real‑Time Interpreter
+```bash
+python src/realtime_inference.py
+```
+
+A webcam window will open and predictions will appear as you sign.  
+Dropping your hands signals the end of a sign, triggering inference.  
+Press **Q** to exit.
+
+---
+
+## Project Structure
+```
+SLI-Word-Level/
+│
+├── docs/                       # Research paper
+├── models/                     # Saved trained model
+├── src/
+│   ├── realtime_inference.py   # Main interpreter
+│   ├── sapling_api.py          # Grammar correction (optional)
+│   └── utils/                  # Feature extraction and helpers
+│
+├── requirements.txt
+├── LICENSE
+└── README.md
+```
+
+---
+
+## Team Members
+- Nour Hany  
+- Laila Khaled  
+- Yasmine Mohamed  
+- **Ahmed Sameh**
+
+---
+
+## License
+This project is released under the **MIT License**.  
+Refer to the `LICENSE` file for details.
